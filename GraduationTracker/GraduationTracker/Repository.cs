@@ -11,7 +11,8 @@ namespace GraduationTracker
         public static Student GetStudent(int id)
         {
             var students = GetStudents();
-            Student student = null;
+            var student = students.SingleOrDefault(r => r.Id == id);
+           /* Student student = null;
 
             for (int i = 0; i < students.Length; i++)
             {
@@ -19,13 +20,15 @@ namespace GraduationTracker
                 {
                     student = students[i];
                 }
-            }
+            } */
             return student;
         }
 
         public static Diploma GetDiploma(int id)
         {
             var diplomas = GetDiplomas();
+            var diploma = diplomas.SingleOrDefault(r => r.Id == id);
+            /*
             Diploma diploma = null;
 
             for (int i = 0; i < diplomas.Length; i++)
@@ -34,7 +37,7 @@ namespace GraduationTracker
                 {
                     diploma = diplomas[i];
                 }
-            }
+            }*/
             return diploma;
 
         }
@@ -42,15 +45,16 @@ namespace GraduationTracker
         public static Requirement GetRequirement(int id)
         {
             var requirements = GetRequirements();
-            Requirement requirement = null;
+            var requirement = requirements.SingleOrDefault(r => r.Id == id);
 
+            /* Requirement requirement = null;
             for (int i = 0; i < requirements.Length; i++)
             {
                 if (id == requirements[i].Id)
                 {
                     requirement = requirements[i];
                 }
-            }
+            }*/
             return requirement;
         }
 
