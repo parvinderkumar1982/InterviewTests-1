@@ -8,6 +8,7 @@ namespace GraduationTracker.Tests.Unit
     [TestClass]
     public class GraduationTrackerTests
     {
+
         [TestMethod]
         public void TestHasCredits()
         {
@@ -78,11 +79,21 @@ namespace GraduationTracker.Tests.Unit
                 graduated.Add(tracker.HasGraduated(diploma, student));      
             }
 
-            
-            Assert.IsFalse(graduated.Any());
+            /*     None,
+             SumaCumLaude,
+             MagnaCumLaude,
+             Average,
+             Remedial
+             */
+            Assert.IsFalse(graduated.Where(g => g.Item1).Count() != 3);
+            Assert.AreEqual("(True, MagnaCumLaude)",graduated[0].ToString());
+            Assert.AreNotEqual("Parvinder Kumar", graduated.Any());
 
+            Assert.IsNotNull(graduated.Any());
+            Assert.IsFalse(false, "Remedial", graduated.Any());
+            
         }
 
-
+       
     }
 }
